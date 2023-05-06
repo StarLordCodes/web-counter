@@ -6,34 +6,25 @@
 
     const formattedDate = `${day}-${month}-${year}`;
 </script>
-
-<div class="day">
-    {day}
+<div class="today">
+{formattedDate}
 </div>
-<div class="month">
-    {month}
-</div>
-<div class="year">
-    {year}
-</div>
-
 <style>
-    .day,.month,.year{
-        font-size: 8rem;
+    .today {
+        font-size: 4rem;
         font-weight: 200;
         opacity: 50%;
-        padding-left: 2rem;
+        grid-area: today;
+        align-self: center;
+        justify-self: center;
     }
-    .day{
-        grid-area: day;
-        align-self: end;
+    .today:hover{
+        opacity: 1;
     }
-    .month{
-        grid-area: month;
-        align-self: start;
-    }
-    .year{
-        grid-area: year;
-        align-self: start;
+    @media (max-width:768px){
+        .today{
+            font-size: 2rem;
+            align-self: start;
+        }
     }
 </style>
