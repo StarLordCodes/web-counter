@@ -1,10 +1,17 @@
 <script>
-    import {count} from './stores.js'
-     const handleCount = ()=>{
-        count.update(n => n += 1);
-    }
-</script>
-
+    import { count, rounds } from './stores.js';
+    
+    const handleCount = () => {
+      count.update(n => {
+        if (n === 108) {
+          rounds.update(r => r + 1);
+          return 0;
+        } else {
+          return n + 1
+        }
+      });
+    };
+  </script>
 <div class="add-btn">
     <button id="count-up" on:click={handleCount}>Count</button>
 </div>

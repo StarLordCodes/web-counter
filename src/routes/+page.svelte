@@ -1,5 +1,6 @@
 <script>
 	import Add from "../components/Add.svelte";
+	import CountBead from "../components/CountBead.svelte";
 	import Counter from "../components/Counter.svelte";
 	import Date from "../components/Date.svelte";
 	import Reset from "../components/Reset.svelte";
@@ -8,6 +9,7 @@
 
 <div class="main-container">
     <Date/>
+    <CountBead/>
     <Counter/>
     <Add/>
     <Reset/>
@@ -32,10 +34,11 @@
         color: white;
         display: grid;
         grid-template-columns: 2fr 1fr; 
-        grid-template-rows: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr; 
         gap: 0px 0px; 
         grid-template-areas: 
             "counter today"
+            "counter bead"
             "counter add-btn"
             "counter reset-btn"; 
         align-items: center;
@@ -51,10 +54,11 @@
         color: white;
         display: grid;
         grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr 3fr 2fr ; 
+        grid-template-rows: 1fr 1fr 2fr 2fr ; 
         gap: 0px 0px; 
         grid-template-areas: 
             "today today"
+            "bead bead"
             "counter counter"
             "add-btn reset-btn"; 
         align-items: center;
